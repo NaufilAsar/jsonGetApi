@@ -9,7 +9,11 @@ async function readJsonFile(path) {
     const file = await fs.readFile(path, {
       encoding: "utf8",
     });
+<<<<<<< HEAD
     const data = JSON.parse(file); // convert JSON to object
+=======
+    const data = JSON.parse(file); // convert JSON to JS object
+>>>>>>> 0e004a34e54c27d34b4bda3e13daaf959ff9e6d3
     for (const key in data) {
       if (data.hasOwnProperty(key)) {
         for (let i = 0; i < data[key].length; i++) {

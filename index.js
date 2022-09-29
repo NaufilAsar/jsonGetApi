@@ -1,5 +1,4 @@
 const express = require("express");
-// const fs = require("fs");
 const app = express();
 const PORT = 5000;
 
@@ -10,7 +9,7 @@ async function readJsonFile(path) {
     const file = await fs.readFile(path, {
       encoding: "utf8",
     });
-    const data = JSON.parse(file); // convert JSON to dataect
+    const data = JSON.parse(file); // convert JSON to object
     for (const key in data) {
       if (data.hasOwnProperty(key)) {
         for (let i = 0; i < data[key].length; i++) {
@@ -40,5 +39,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, function () {
-  console.log("listening on port https://localhost:" + PORT);
+  console.log("listening on port http://localhost:" + PORT);
 });
